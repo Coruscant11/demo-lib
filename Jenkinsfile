@@ -15,12 +15,8 @@ pipeline {
 	    stage('Publish'){
 	        // TOP SECURITY : we PUBLISH only if we are in a main branch
 	        steps {
-	        	script {
-					if (env["CHANGE_ID"] == null){
-	        			npm adduser test test && npm publish --registry "http://10.224.0.1:4873/"
-	        		} else {
-	        			echo 'nothing to do'
-	        		}
+	      			sh 'npm adduser test test && npm publish --registry "http://10.224.0.1:4873/"'
+	      			echo 'nothing to do'
 	        	}
 	        }
 	    }
