@@ -4,7 +4,7 @@ pipeline {
 	stages {
 	    stage('Prepare'){
 		    steps {
-	        	sh 'npm version patch'
+	        	sh 'npm version patch --no-git-tag-version'
 		    }
 	    }
 	    stage('Build'){
