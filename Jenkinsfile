@@ -4,9 +4,12 @@ pipeline {
 	stages {
 	    stage('Prepare'){
 		    steps {
-		    	sh 'ls -la'
-	        	sh 'npm version patch --no-git-tag-version'
-	      		sh 'npm whoami'
+		    	withCredentials([string(credentialsId: 'registry', variable: 'token')]) {
+			    	sh 'ls -la'
+			    	sh "echo //10.224.0.1:4873/:_authToken=$token} >> .npmrc"
+		        	sh 'npm version patch --no-git-tag-version'
+		      		sh 'npm whoami'
+		      	}
 		    }
 	    }
 	    stage('Build'){
