@@ -5,7 +5,6 @@ pipeline {
 	    stage('Prepare'){
 		    steps {
 	        	sh 'npm version patch --no-git-tag-version'
-	        	sh 'npm adduser test test'
 		    }
 	    }
 	    stage('Build'){
@@ -18,6 +17,7 @@ pipeline {
 	        steps {
 	        	script {
 					if (env["CHANGE_ID"] == null){
+	        			sh 'npm adduser test test'					
 	            		sh 'npm publish'
 	        		} else {
 	        			echo 'nothing to do'
