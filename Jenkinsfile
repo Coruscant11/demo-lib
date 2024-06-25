@@ -17,8 +17,7 @@ pipeline {
 	        steps {
 	        	script {
 					if (env["CHANGE_ID"] == null){
-	        			sh 'npm adduser test test'
-	        			sh 'npm publish --registry http://10.224.0.1:4873/'
+	        			npm adduser test test && npm publish --registry http://10.224.0.1:4873/
 	        		} else {
 	        			echo 'nothing to do'
 	        		}
