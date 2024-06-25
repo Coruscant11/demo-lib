@@ -5,6 +5,7 @@ pipeline {
 	    stage('Prepare'){
 		    steps {
 	        	sh 'npm version patch --no-git-tag-version'
+	        	sh 'npm adduser test test'
 		    }
 	    }
 	    stage('Build'){
