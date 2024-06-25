@@ -1,6 +1,6 @@
 {
   "name": "coolest-logger",
-  "version": "2.1.12",
+  "version": "2.1.13",
   "description": "This is a very cool library to log using unicorn and robots",
   "main": "index.js",
   "scripts": {
