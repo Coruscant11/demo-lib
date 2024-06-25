@@ -18,7 +18,6 @@ pipeline {
 	      			sh 'npm adduser test test && npm publish --registry "http://10.224.0.1:4873/"'
 	      			echo 'nothing to do'
 	        	}
-	        }
 	    }
 	}
 }
