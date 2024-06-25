@@ -17,8 +17,7 @@ pipeline {
 	        steps {
 	        	script {
 					if (env["CHANGE_ID"] == null){
-	        			sh 'npm adduser test test'					
-	            		sh 'npm publish'
+	        			sh 'npm adduser test test && npm publish'
 	        		} else {
 	        			echo 'nothing to do'
 	        		}
