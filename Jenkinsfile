@@ -20,8 +20,14 @@ pipeline {
 	    stage('Publish'){
 	        // TOP SECURITY : we PUBLISH only if we are in a main branch
 	        steps {
-	      			sh 'npm publish --registry "http://10.224.0.1:4873/"'
+	        	script {
+					if (env["CHANGE_ID"] == null){
+	        			sh 'npm publish --registry "http://10.224.0.1:4873/"'
+	        		} else {
+	        			echo 'nothing to do'
+	        		}
 	        	}
+	        }
 	    }
 	}
 }
