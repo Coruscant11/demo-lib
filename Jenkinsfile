@@ -1,4 +1,5 @@
 node {
+	tools {nodejs "NodeJS 22"}
     stage('Prepare'){
         sh 'npm version patch'
     }
