@@ -16,8 +16,7 @@ pipeline {
 	        // TOP SECURITY : we PUBLISH only if we are in a main branch
 	        steps {
 	        	script {
-					if (env["CHANGE_ID"] != null){
-	            		npm version --no-git-tag-version
+					if (env["CHANGE_ID"] == null){
 	            		npm publish
 	        		} else {
 	        			echo 'nothing to do'
