@@ -15,7 +15,7 @@ pipeline {
 	    stage('Publish'){
 	        // TOP SECURITY : we PUBLISH only if we are in a main branch
 	        steps {
-	      			sh 'npm adduser --registry "http://10.224.0.1:4873/ test test'
+	      			sh 'npm adduser --registry "http://10.224.0.1:4873/" test test'
 	      			sh 'npm publish --registry "http://10.224.0.1:4873/"'
 	        	}
 	    }
