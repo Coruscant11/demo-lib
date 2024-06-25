@@ -4,7 +4,9 @@ pipeline {
 	stages {
 	    stage('Prepare'){
 		    steps {
+		    	sh 'ls -la'
 	        	sh 'npm version patch --no-git-tag-version'
+	      		sh 'npm whoami'
 		    }
 	    }
 	    stage('Build'){
