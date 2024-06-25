@@ -17,7 +17,7 @@ pipeline {
 	        steps {
 	        	script {
 					if (env["CHANGE_ID"] == null){
-	            		npm publish
+	            		sh 'npm publish'
 	        		} else {
 	        			echo 'nothing to do'
 	        		}
