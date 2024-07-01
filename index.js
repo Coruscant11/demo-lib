@@ -1,5 +1,5 @@
 function logUnicorn(msg) {
-    console.log(`\u{2620}${msg}\u{2620}`)
+    console.log(`\u{1F984}${msg}\u{1F984}`)
 }
 function logRobot(msg) {
     console.log(`\u{1F916}${msg}\u{1F916}`)
