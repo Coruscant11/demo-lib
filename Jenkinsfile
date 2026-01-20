@@ -5,7 +5,7 @@ pipeline {
 	    stage('Prepare'){
 		    steps {
 		    	withCredentials([string(credentialsId: 'registry', variable: 'token')]) {
-			    	sh "echo //10.224.0.1:4873/:_authToken=$token} >> .npmrc"
+			    	sh "echo //localhost:4873/:_authToken=$token} >> .npmrc"
 					sh 'npm version patch --no-git-tag-version'
 		      	}
 		    }
@@ -20,7 +20,7 @@ pipeline {
 	        steps {
 	        	script {
 					if (env["CHANGE_ID"] == null){
-	        			sh 'npm publish --registry "http://10.224.0.1:4873/"'
+	        			sh 'npm publish --registry "http://localhost:4873/"'
 	        		} else {
 						echo 'Nothing to do'
 	        		}
